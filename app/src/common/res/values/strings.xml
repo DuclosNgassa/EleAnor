@@ -1,0 +1,4 @@
+<resources>
+    <string name="action_settings">Settings New</string>
+    <string name="test">Test sourceSets</string>
+</resources>

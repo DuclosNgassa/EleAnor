@@ -1,5 +1,10 @@
 apply plugin: 'com.android.application'
 
+List<String> dirs = [
+        'main',
+        'common'
+]
+
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
@@ -11,6 +16,17 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+//hier
+
+    sourceSets{
+        main{
+            dirs.each {dir ->
+                java.srcDirs "src/${dir}/java"
+                res.srcDirs "src/${dir}/res"
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -18,7 +34,9 @@ android {
         }
     }
 
-    productFlavors{
+
+
+/*    productFlavors{
         sse{
             applicationIdSuffix ".sse"
             versionName "1.0-sse"
@@ -34,6 +52,7 @@ android {
             versionName "1.0-wi"
         }
     }
+    */
 }
 
 dependencies {
